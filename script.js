@@ -2,23 +2,39 @@ const num1input = document.getElementById('first-number');
 const num2input = document.getElementById('second-number');
 const btnplus = document.getElementById('btn-plus');
 const btnminus = document.getElementById('btn-minus');
+const btnmulti = document.getElementById('btn-multi');
+const btndivi = document.getElementById('btn-divi');
+const resultSpan = document.getElementById('result');
 
-document.getElementById('btn-plus').onclick = function () {
-    const resultado = calculator(Number(num1input.value), Number(num2input.value), '+');
-    document.getElementById('resultado').innerText = resultado
+btnplus.onclick = function () {
+    const result = calculator(Number(num1input.value), Number(num2input.value), '+');
+    resultSpan.innerText = result;
 }
 
 btnminus.onclick = function () {
-    const resultado = calculator(Number(num1input.value), Number(num2input.value), '-');
-    document.getElementById('resultado').innerText = resultado
+    const result = calculator(Number(num1input.value), Number(num2input.value), '-');
+    resultSpan.innerText = result;
 }
 
-function calculator(num1input, num2input, operation ){
+btnmulti.onclick = function () {
+    const result = calculator(Number(num1input.value), Number(num2input.value), '*');
+    resultSpan.innerText = result;
+}
+
+btndivi.onclick = function () {
+    const result = calculator(Number(num1input.value), Number(num2input.value), '/');
+    resultSpan.innerText = result;
+}
+
+function calculator(num1, num2, operation){
     if (operation === '+'){
-        return num1input + num2input;
-    } else {
-        return num1input - num2input
+        return num1 + num2;
+    } else if (operation === '-') {
+        return num1 - num2;
+    } else if (operation === '*') {
+        return num1 * num2;
+    } else if (operation === '/') {
+        if (num2 === 0) return "Erro (Divisão por 0)"; 
+        return num1 / num2;
     }
-
 }
-

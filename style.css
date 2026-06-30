@@ -74,6 +74,23 @@ button {
     background-color: #c82333;
 }
 
+.multi {
+    background-color: #007bff;
+}
+
+.multi:hover {
+    background-color: #0056b3;
+}
+
+.divi {
+    background-color: #ffc107;
+    color: #333; /* Texto escuro para dar leitura no fundo amarelo */
+}
+
+.divi:hover {
+    background-color: #e0a800;
+}
+
 button:active {
     transform: scale(0.98);
 }
@@ -84,7 +101,7 @@ h2 {
     font-size: 22px;
 }
 
-#resultado {
+#resultado, #result {
     color: #007bff;
     font-weight: bold;
 }
